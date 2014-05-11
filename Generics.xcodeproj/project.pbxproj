@@ -124,7 +124,6 @@
 		D10B84BA191FFC7200533BFB /* GnLighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnLighting.h; sourceTree = "<group>"; };
 		D10B84D1192009EC00533BFB /* GnFrustumCulling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnFrustumCulling.cpp; sourceTree = "<group>"; };
 		D10B84D2192009EC00533BFB /* GnFrustumCulling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnFrustumCulling.h; sourceTree = "<group>"; };
-		D10B84D519200A7900533BFB /* Plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscMessage.cpp; path = ../../../addons/ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -293,7 +292,6 @@
 		D10B84B4191FF54200533BFB /* MyClasses */ = {
 			isa = PBXGroup;
 			children = (
-				D10B84D619200C6D00533BFB /* add */,
 				D10B84A8191FCF5100533BFB /* GnLfo.cpp */,
 				D10B84A9191FCF5100533BFB /* GnLfo.h */,
 				D10B84AB191FF3D300533BFB /* GnMesh.cpp */,
@@ -310,23 +308,6 @@
 				D10B84D2192009EC00533BFB /* GnFrustumCulling.h */,
 			);
 			name = MyClasses;
-			sourceTree = "<group>";
-		};
-		D10B84D419200A6700533BFB /* ofxFrustum */ = {
-			isa = PBXGroup;
-			children = (
-				D10B84D519200A7900533BFB /* Plane.h */,
-			);
-			name = ofxFrustum;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		D10B84D619200C6D00533BFB /* add */ = {
-			isa = PBXGroup;
-			children = (
-				D10B84D419200A6700533BFB /* ofxFrustum */,
-			);
-			name = add;
 			sourceTree = "<group>";
 		};
 		D27B2221A225CA523C019676 /* src */ = {

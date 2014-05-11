@@ -10,7 +10,7 @@
 #define __Generics__GnFrustumCulling__
 
 #include "ofMain.h"
-#include "Plane.h"
+#include "GnMesh.h"
 
 class GnFrustumCulling{
     
@@ -33,6 +33,8 @@ public:
     ofEasyCam  cameraB;
     vector <ofCamera*> cams;
     
+    GnMesh mesh;
+
 };
 
 #endif /* defined(__Generics__GnFrustumCulling__) */

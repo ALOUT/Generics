@@ -35,8 +35,8 @@ void GnMesh::update(){
     for (int i=0; i<widthMesh; i++) {
         for (int j=0; j<heightMesh; j++) {
             
-            float x = sin(i * 0.1 + ofGetElapsedTimef()) * 50.0;
-            float y = sin(j * 0.15 + ofGetElapsedTimef()) * 50.0;
+            float x = sin(i * 0.1 + ofGetElapsedTimef()) * 100.0;
+            float y = sin(j * 0.15 + ofGetElapsedTimef()) * 100.0;
             float z = x + y;
             mesh.addVertex(ofVec3f(i - widthMesh/2, j - heightMesh/2, z));
         }
@@ -50,7 +50,7 @@ void GnMesh::draw(){
     // メッシュ頂点情報を描画
     glPointSize(1.0);
     glEnable(GL_POINT_SMOOTH);
-    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    //ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
     mesh.drawVertices();
     
 }

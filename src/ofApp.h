@@ -28,4 +28,6 @@ public:
     GnMesh gnMesh;
     GnLighting lighting;
     
+    GnFrustumCulling frustum;
+    
 };
