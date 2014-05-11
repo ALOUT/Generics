@@ -12,6 +12,7 @@
 #include "ofMain.h"
 #include "GnMesh.h"
 
+// 透視投射影クラス
 class GnFrustumCulling{
     
 public:
@@ -23,10 +24,11 @@ public:
     void setup();
     void update();
     void draw();
+    void drawFrustum();
     
     float nearDis;
     float farDis;
-    float fov;
+    float fov; // 視野の垂直方向画角（角度）大きいほど広角レンズ、小さいほど望遠レンズになる
     
     int selectedCamera;
     ofCamera cameraA;

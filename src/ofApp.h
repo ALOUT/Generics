@@ -8,6 +8,11 @@
 #include "GnLighting.h"
 #include "GnFrustumCulling.h"
 
+
+// addons
+#include "ofxGifEncoder.h"
+
+
 class ofApp : public ofBaseApp{
     
 public:
@@ -27,7 +32,23 @@ public:
     
     GnMesh gnMesh;
     GnLighting lighting;
-    
     GnFrustumCulling frustum;
     
+    // addons (ofxGifEncoder)
+    void setupGifEncorder();
+    void updateGifEncorder();
+    void onGifSaved(string & fileName);
+    void exit();
+    void captureFrame();
+    
+    vector <ofTexture *> txs; // for previewing
+    vector <ofxGifFrame *> pxs;
+    
+    int frameW, frameH;
+    int nFrames;
+    
+    ofImage grabbedImage; //画面をキャプチャーしたイメージデータ
+    
+    ofVideoGrabber vid;
+    ofxGifEncoder gifEncoder;
 };

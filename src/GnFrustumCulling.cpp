@@ -33,7 +33,7 @@ void GnFrustumCulling::setup(){
 
 void GnFrustumCulling::update(){
     
-    cameraA.rotateAround(0.8, ofVec3f(0, 1, 0), ofVec3f());
+    cameraA.rotateAround(0.8, ofVec3f(2, 1, 2), ofVec3f());
     cameraA.lookAt(ofVec3f());
     
     cameraA.setNearClip(nearDis);
@@ -55,10 +55,7 @@ void drawBox(ofPoint tr, ofPoint tl, ofPoint br, ofPoint bl) {
     ofLine(bl, tl);
 }
 
-void GnFrustumCulling::draw(){
-    
-    ofEnableDepthTest();
-    cams[selectedCamera]->begin();
+void GnFrustumCulling::drawFrustum() {
     
     ofRectangle viewport = ofGetCurrentViewport();
     
@@ -89,7 +86,7 @@ void GnFrustumCulling::draw(){
 	ofVec3f ntr = nc + (up * nearH/2) + (right * nearW/2);
 	ofVec3f nbl = nc - (up * nearH/2) - (right * nearW/2);
 	ofVec3f nbr = nc - (up * nearH/2) + (right * nearW/2);
-
+    
     drawBox(ftl, ftr, fbl, fbr);    // draw far plane
     drawBox(ntl, ntr, nbl, nbr);    // draw near plane
     ofLine(ftl, ntl);
@@ -97,8 +94,24 @@ void GnFrustumCulling::draw(){
     ofLine(fbl, nbl);
     ofLine(fbr, nbr);
     
-    //ofDrawBox(0, 0, 0, 100);
+    ofSetColor(255);
+    // draw cameras
+    for(int i=0; i<cams.size(); i++) {
+        cams[i]->draw();
+    }
+    
+}
+
+void GnFrustumCulling::draw(){
+    
+    cams[selectedCamera]->begin();
+    drawFrustum();
+    
+    
+    
     mesh.draw();
+    
+    ofDrawBox(0,0,0,100);
     
     cams[selectedCamera]->end();
     
@@ -111,10 +124,10 @@ void GnFrustumCulling::keyPressed(int key){
     if(key == '1') selectedCamera = 0;
     if(key == '2') selectedCamera = 1;
     
-    if(key == OF_KEY_DOWN)   cameraB.setDistance(cameraB.getDistance()+2 * 10);
-    if(key == OF_KEY_UP)     cameraB.setDistance(cameraB.getDistance()-2 * 10);
-    if(key == OF_KEY_RIGHT)  cameraA.move(ofVec3f(1 * 10, 0, 0));
-    if(key == OF_KEY_LEFT)   cameraA.move(ofVec3f(-1 * 10, 0, 0));
+    if(key == OF_KEY_DOWN) cameraB.setDistance(cameraB.getDistance()+2 * 10);
+    if(key == OF_KEY_UP) cameraB.setDistance(cameraB.getDistance()-2 * 10);
+    if(key == OF_KEY_RIGHT) cameraA.move(ofVec3f(1 * 10, 0, 0));
+    if(key == OF_KEY_LEFT) cameraA.move(ofVec3f(-1 * 10, 0, 0));
 }
 //--------------------------------------------------------------
 void GnFrustumCulling::mouseReleased(int x, int y, int button){

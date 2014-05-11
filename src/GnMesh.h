@@ -11,8 +11,8 @@
 
 #include "ofMain.h"
 
-#define WIDTH 500
-#define HEIGHT 500
+#define WIDTH 100
+#define HEIGHT 100
 #define NUM_PARTICLES WIDTH * HEIGHT
 
 class GnMesh{
