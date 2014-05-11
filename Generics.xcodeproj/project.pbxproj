@@ -237,7 +237,6 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				D10B84D419200A6700533BFB /* ofxFrustum */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 			);
 			name = addons;
@@ -294,6 +293,7 @@
 		D10B84B4191FF54200533BFB /* MyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				D10B84D619200C6D00533BFB /* add */,
 				D10B84A8191FCF5100533BFB /* GnLfo.cpp */,
 				D10B84A9191FCF5100533BFB /* GnLfo.h */,
 				D10B84AB191FF3D300533BFB /* GnMesh.cpp */,
@@ -318,6 +318,15 @@
 				D10B84D519200A7900533BFB /* Plane.h */,
 			);
 			name = ofxFrustum;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D10B84D619200C6D00533BFB /* add */ = {
+			isa = PBXGroup;
+			children = (
+				D10B84D419200A6700533BFB /* ofxFrustum */,
+			);
+			name = add;
 			sourceTree = "<group>";
 		};
 		D27B2221A225CA523C019676 /* src */ = {
