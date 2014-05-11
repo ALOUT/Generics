@@ -5,6 +5,6 @@ Generics
 プロトタイピングをOpenframeWorksにて実装。
 他言語への意識したマクロ的な再利用性を意識。
 
-1.角錐台形視野
+1.透視投影 (Frustum)
 
 
