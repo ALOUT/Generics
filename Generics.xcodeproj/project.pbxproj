@@ -22,6 +22,13 @@
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */; };
+		D10B84AA191FCF5100533BFB /* GnLfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84A8191FCF5100533BFB /* GnLfo.cpp */; };
+		D10B84AD191FF3D300533BFB /* GnMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84AB191FF3D300533BFB /* GnMesh.cpp */; };
+		D10B84B0191FF45500533BFB /* Gn3DObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84AE191FF45500533BFB /* Gn3DObject.cpp */; };
+		D10B84B3191FF4B500533BFB /* GnTextObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84B1191FF4B500533BFB /* GnTextObject.cpp */; };
+		D10B84B7191FF57D00533BFB /* GnVBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84B5191FF57D00533BFB /* GnVBO.cpp */; };
+		D10B84BB191FFC7200533BFB /* GnLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84B9191FFC7200533BFB /* GnLighting.cpp */; };
+		D10B84D3192009EC00533BFB /* GnFrustumCulling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84D1192009EC00533BFB /* GnFrustumCulling.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -103,6 +110,21 @@
 		C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscReceiver.cpp; path = ../../../addons/ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
 		C58862C6D212C8E8A83810F4 /* ofxOscMessage.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscMessage.h; path = ../../../addons/ofxOsc/src/ofxOscMessage.h; sourceTree = SOURCE_ROOT; };
 		C6937888E126BADC8777423B /* OscTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscTypes.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h; sourceTree = SOURCE_ROOT; };
+		D10B84A8191FCF5100533BFB /* GnLfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnLfo.cpp; sourceTree = "<group>"; };
+		D10B84A9191FCF5100533BFB /* GnLfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnLfo.h; sourceTree = "<group>"; };
+		D10B84AB191FF3D300533BFB /* GnMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnMesh.cpp; sourceTree = "<group>"; };
+		D10B84AC191FF3D300533BFB /* GnMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnMesh.h; sourceTree = "<group>"; };
+		D10B84AE191FF45500533BFB /* Gn3DObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gn3DObject.cpp; sourceTree = "<group>"; };
+		D10B84AF191FF45500533BFB /* Gn3DObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gn3DObject.h; sourceTree = "<group>"; };
+		D10B84B1191FF4B500533BFB /* GnTextObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnTextObject.cpp; sourceTree = "<group>"; };
+		D10B84B2191FF4B500533BFB /* GnTextObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnTextObject.h; sourceTree = "<group>"; };
+		D10B84B5191FF57D00533BFB /* GnVBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnVBO.cpp; sourceTree = "<group>"; };
+		D10B84B6191FF57D00533BFB /* GnVBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnVBO.h; sourceTree = "<group>"; };
+		D10B84B9191FFC7200533BFB /* GnLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnLighting.cpp; sourceTree = "<group>"; };
+		D10B84BA191FFC7200533BFB /* GnLighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnLighting.h; sourceTree = "<group>"; };
+		D10B84D1192009EC00533BFB /* GnFrustumCulling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GnFrustumCulling.cpp; sourceTree = "<group>"; };
+		D10B84D2192009EC00533BFB /* GnFrustumCulling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GnFrustumCulling.h; sourceTree = "<group>"; };
+		D10B84D519200A7900533BFB /* Plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscMessage.cpp; path = ../../../addons/ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -215,6 +237,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				D10B84D419200A6700533BFB /* ofxFrustum */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 			);
 			name = addons;
@@ -268,6 +291,35 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		D10B84B4191FF54200533BFB /* MyClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D10B84A8191FCF5100533BFB /* GnLfo.cpp */,
+				D10B84A9191FCF5100533BFB /* GnLfo.h */,
+				D10B84AB191FF3D300533BFB /* GnMesh.cpp */,
+				D10B84AC191FF3D300533BFB /* GnMesh.h */,
+				D10B84AE191FF45500533BFB /* Gn3DObject.cpp */,
+				D10B84AF191FF45500533BFB /* Gn3DObject.h */,
+				D10B84B1191FF4B500533BFB /* GnTextObject.cpp */,
+				D10B84B2191FF4B500533BFB /* GnTextObject.h */,
+				D10B84B5191FF57D00533BFB /* GnVBO.cpp */,
+				D10B84B6191FF57D00533BFB /* GnVBO.h */,
+				D10B84B9191FFC7200533BFB /* GnLighting.cpp */,
+				D10B84BA191FFC7200533BFB /* GnLighting.h */,
+				D10B84D1192009EC00533BFB /* GnFrustumCulling.cpp */,
+				D10B84D2192009EC00533BFB /* GnFrustumCulling.h */,
+			);
+			name = MyClasses;
+			sourceTree = "<group>";
+		};
+		D10B84D419200A6700533BFB /* ofxFrustum */ = {
+			isa = PBXGroup;
+			children = (
+				D10B84D519200A7900533BFB /* Plane.h */,
+			);
+			name = ofxFrustum;
+			sourceTree = "<group>";
+		};
 		D27B2221A225CA523C019676 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +362,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				D10B84B4191FF54200533BFB /* MyClasses */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -446,12 +499,19 @@
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
+				D10B84AD191FF3D300533BFB /* GnMesh.cpp in Sources */,
+				D10B84BB191FFC7200533BFB /* GnLighting.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
+				D10B84D3192009EC00533BFB /* GnFrustumCulling.cpp in Sources */,
+				D10B84B0191FF45500533BFB /* Gn3DObject.cpp in Sources */,
+				D10B84AA191FCF5100533BFB /* GnLfo.cpp in Sources */,
+				D10B84B7191FF57D00533BFB /* GnVBO.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
+				D10B84B3191FF4B500533BFB /* GnTextObject.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +692,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -717,6 +778,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
