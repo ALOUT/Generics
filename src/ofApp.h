@@ -8,10 +8,9 @@
 #include "GnLighting.h"
 #include "GnFrustumCulling.h"
 
-
 // addons
 #include "ofxGifEncoder.h"
-
+#include "ofxVideoRecorder.h"
 
 class ofApp : public ofBaseApp{
     
@@ -38,17 +37,35 @@ public:
     void setupGifEncorder();
     void updateGifEncorder();
     void onGifSaved(string & fileName);
+    void gifEncorderKeyPress(int key);
     void exit();
     void captureFrame();
-    
     vector <ofTexture *> txs; // for previewing
     vector <ofxGifFrame *> pxs;
-    
     int frameW, frameH;
     int nFrames;
-    
     ofImage grabbedImage; //画面をキャプチャーしたイメージデータ
-    
-    ofVideoGrabber vid;
+
     ofxGifEncoder gifEncoder;
+    
+    // addons (ofxVideoRecorder)
+    void audioIn(float * input, int bufferSize, int nChannels);
+    ofVideoGrabber      vidGrabber;
+    
+    void setupVideoRecorder();
+    void updateVideoRecorder();
+    void drawVideoRecorder();
+    void videoRecorderKeyPressed(int key);
+    
+    ofxVideoRecorder    vidRecorder;
+    ofSoundStream       soundStream;
+    bool bRecording;
+    int sampleRate;
+    int channels;
+    string fileName;
+    string fileExt;
+    
+    ofFbo recordFbo;
+    ofPixels recordPixels;
+    
 };

@@ -30,6 +30,7 @@
 		D10B84BB191FFC7200533BFB /* GnLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84B9191FFC7200533BFB /* GnLighting.cpp */; };
 		D10B84D3192009EC00533BFB /* GnFrustumCulling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84D1192009EC00533BFB /* GnFrustumCulling.cpp */; };
 		D10B84DD1920312600533BFB /* ofxGifEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84DA1920312600533BFB /* ofxGifEncoder.cpp */; };
+		D10B84EA1920555100533BFB /* ofxVideoRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D10B84E81920555100533BFB /* ofxVideoRecorder.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -129,6 +130,8 @@
 		D10B84DA1920312600533BFB /* ofxGifEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGifEncoder.cpp; sourceTree = "<group>"; };
 		D10B84DB1920312600533BFB /* ofxGifEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGifEncoder.h; sourceTree = "<group>"; };
 		D10B84DC1920312600533BFB /* ofxGifFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxGifFrame.h; sourceTree = "<group>"; };
+		D10B84E81920555100533BFB /* ofxVideoRecorder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxVideoRecorder.cpp; sourceTree = "<group>"; };
+		D10B84E91920555100533BFB /* ofxVideoRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxVideoRecorder.h; sourceTree = "<group>"; };
 		D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscMessage.cpp; path = ../../../addons/ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -319,6 +322,7 @@
 		D10B84D71920310100533BFB /* addon */ = {
 			isa = PBXGroup;
 			children = (
+				D10B84E61920555100533BFB /* ofxVideoRecorder */,
 				D10B84D81920311400533BFB /* ofxGifEncoder */,
 			);
 			name = addon;
@@ -333,6 +337,25 @@
 				D10B84DC1920312600533BFB /* ofxGifFrame.h */,
 			);
 			name = ofxGifEncoder;
+			sourceTree = "<group>";
+		};
+		D10B84E61920555100533BFB /* ofxVideoRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				D10B84E71920555100533BFB /* src */,
+			);
+			name = ofxVideoRecorder;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D10B84E71920555100533BFB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D10B84E81920555100533BFB /* ofxVideoRecorder.cpp */,
+				D10B84E91920555100533BFB /* ofxVideoRecorder.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxVideoRecorder/src;
 			sourceTree = "<group>";
 		};
 		D27B2221A225CA523C019676 /* src */ = {
@@ -523,6 +546,7 @@
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				D10B84D3192009EC00533BFB /* GnFrustumCulling.cpp in Sources */,
 				D10B84B0191FF45500533BFB /* Gn3DObject.cpp in Sources */,
+				D10B84EA1920555100533BFB /* ofxVideoRecorder.cpp in Sources */,
 				D10B84AA191FCF5100533BFB /* GnLfo.cpp in Sources */,
 				D10B84B7191FF57D00533BFB /* GnVBO.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
@@ -707,6 +731,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
@@ -793,6 +818,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
