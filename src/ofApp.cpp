@@ -11,7 +11,6 @@ void ofApp::setup(){
     setupVideoRecorder();
     
     lighting.setup();
-    
     frustum.setup();
     
 }
@@ -29,10 +28,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofBackgroundGradient(ofColor::white, ofFloatColor(0 / 255.0, 60 / 255.0, 90 / 255.0,1.0));
+    ofBackgroundGradient(ofColor::white, ofFloatColor(0 / 255.0, 60 / 255.0, 90 / 255.0,1.0), OF_GRADIENT_LINEAR);
 
     frustum.draw();
-    drawVideoRecorder();
     
 }
 
@@ -40,13 +38,11 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
+    if (key == 'f') ofToggleFullscreen();
+    
     gifEncorderKeyPress(key);
     videoRecorderKeyPressed(key);
     frustum.keyPressed(key);
-    
-    if (key == 'f') {
-        ofToggleFullscreen();
-    }
     
 }
 
@@ -165,8 +161,8 @@ void ofApp::videoRecorderKeyPressed(int key){
     if(key=='r'){
         bRecording = !bRecording;
         if(bRecording && !vidRecorder.isInitialized()) {
-            //vidRecorder.setup(fileName+ofGetTimestampString()+fileExt, grabbedImage.getWidth(), grabbedImage.getHeight(), 30, sampleRate, channels);
-            vidRecorder.setup(fileName+ofGetTimestampString()+fileExt, grabbedImage.getWidth(), grabbedImage.getHeight(), 30); // no audio
+            vidRecorder.setup(fileName+ofGetTimestampString()+fileExt, grabbedImage.getWidth(), grabbedImage.getHeight(), 30, sampleRate, channels);
+            //vidRecorder.setup(fileName+ofGetTimestampString()+fileExt, grabbedImage.getWidth(), grabbedImage.getHeight(), 30); // no audio
             //            vidRecorder.setup(fileName+ofGetTimestampString()+fileExt, 0,0,0, sampleRate, channels); // no video
             //          vidRecorder.setupCustomOutput(vidGrabber.getWidth(), vidGrabber.getHeight(), 30, sampleRate, channels, "-vcodec mpeg4 -b 1600k -acodec mp2 -ab 128k -f mpegts udp://localhost:1234"); // for custom ffmpeg output string (streaming, etc)
         }
@@ -233,6 +229,7 @@ void ofApp::gifEncorderKeyPress(int key){
         case 's':
             cout <<"start saving\n" << endl;
             gifEncoder.save(ofToString(ofToString(ofGetYear(), 0) + ofToString(ofGetMonth(), 0) + ofToString(ofGetDay(), 0) + ofToString(ofGetHours(), 0) + ofToString(ofGetMinutes(), 0) + ofToString(ofGetSeconds(), 0), 0) + ".gif");
+            //gifEncoder.exit();
             break;
         default:
             break;

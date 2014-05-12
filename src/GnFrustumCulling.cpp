@@ -22,12 +22,22 @@ void GnFrustumCulling::setup(){
     selectedCamera = 1;
     cams.push_back(&cameraA);
     cams.push_back(&cameraB);
+    cams.push_back(&cameraC);
+    cams.push_back(&cameraD);
+    cams.push_back(&cameraE);
     
     cameraA.setPosition(ofVec3f() + (200 * cameraA.getZAxis()));
     cameraB.setPosition(ofVec3f() + (200 * cameraA.getZAxis()));;
     cameraB.setDistance(500);
     
+    cameraC.setPosition(ofVec3f() + (200 * cameraC.getZAxis()));
+    cameraD.setPosition(ofVec3f() + (200 * cameraD.getZAxis()));
+    cameraE.setPosition(ofVec3f() + (200 * cameraE.getZAxis()));
+
+    
     mesh.setup();
+    
+    pafume.setup();
     
 }
 
@@ -35,12 +45,31 @@ void GnFrustumCulling::update(){
     
     cameraA.rotateAround(0.8, ofVec3f(2, 1, 2), ofVec3f());
     cameraA.lookAt(ofVec3f());
-    
     cameraA.setNearClip(nearDis);
     cameraA.setFarClip(farDis);
     cameraA.setFov(fov);
     
+    cameraC.rotateAround(0.3, ofVec3f(0, 5, 2), ofVec3f());
+    cameraC.lookAt(ofVec3f());
+    cameraC.setNearClip(nearDis);
+    cameraC.setFarClip(farDis);
+    cameraC.setFov(fov);
+    
+    cameraD.rotateAround(0.5, ofVec3f(4, 2, 0), ofVec3f());
+    cameraD.lookAt(ofVec3f());
+    cameraD.setNearClip(nearDis);
+    cameraD.setFarClip(farDis);
+    cameraD.setFov(fov);
+    
+    cameraE.rotateAround(1.0, ofVec3f(2, 4, 9), ofVec3f());
+    cameraE.lookAt(ofVec3f());
+    cameraE.setNearClip(nearDis);
+    cameraE.setFarClip(farDis);
+    cameraE.setFov(fov);
+    
     mesh.update();
+    
+    pafume.update();
     
 }
 
@@ -55,28 +84,28 @@ void drawBox(ofPoint tr, ofPoint tl, ofPoint br, ofPoint bl) {
     ofLine(bl, tl);
 }
 
-void GnFrustumCulling::drawFrustum() {
+void GnFrustumCulling::drawFrustum(ofCamera _camera) {
     
     ofRectangle viewport = ofGetCurrentViewport();
     
     float ratio     = viewport.width / viewport.height;
-    float nearH     = 2 * tan(cameraA.getFov() / 2.0) * -cameraA.getNearClip();
+    float nearH     = 2 * tan(_camera.getFov() / 2.0) * -_camera.getNearClip();
 	float nearW     = nearH * ratio;
-    float farH      = 2 * tan(cameraA.getFov() / 2.0) * -cameraA.getFarClip();
+    float farH      = 2 * tan(_camera.getFov() / 2.0) * -_camera.getFarClip();
 	float farW      = farH * ratio;
     
-    ofVec3f p  = cameraA.getPosition();
-    ofVec3f l  = cameraA.getLookAtDir();
-    ofVec3f u  = cameraA.getUpDir();
+    ofVec3f p  = _camera.getPosition();
+    ofVec3f l  = _camera.getLookAtDir();
+    ofVec3f u  = _camera.getUpDir();
     
-    ofVec3f fc = p + l * cameraA.getFarClip();
-	ofVec3f nc = p + l * cameraA.getNearClip();
+    ofVec3f fc = p + l * _camera.getFarClip();
+	ofVec3f nc = p + l * _camera.getNearClip();
     
     ofSetColor(255);
     ofLine(nc, fc);
     
-    ofVec3f up  = cameraA.getUpDir();
-    ofVec3f right = cameraA.getXAxis();
+    ofVec3f up  = _camera.getUpDir();
+    ofVec3f right = _camera.getXAxis();
     
     ofVec3f ftl = fc + (up * farH/2) - (right * farW/2);
     ofVec3f ftr = fc + (up * farH/2) + (right * farW/2);
@@ -94,24 +123,28 @@ void GnFrustumCulling::drawFrustum() {
     ofLine(fbl, nbl);
     ofLine(fbr, nbr);
     
-    ofSetColor(255);
-    // draw cameras
-    for(int i=0; i<cams.size(); i++) {
-        cams[i]->draw();
-    }
+
     
 }
 
 void GnFrustumCulling::draw(){
     
     cams[selectedCamera]->begin();
-    drawFrustum();
     
+    
+    ofSetColor(255);
+    // draw cameras
+    for(int i=0; i<cams.size(); i++) {
+        //drawFrustum(*cams[i]);
+        cams[i]->draw();
+    }
     
     
     mesh.draw();
     
-    ofDrawBox(0,0,0,100);
+    pafume.draw();
+    
+    //ofDrawBox(0,0,0,100);
     
     cams[selectedCamera]->end();
     
@@ -123,6 +156,9 @@ void GnFrustumCulling::keyPressed(int key){
     
     if(key == '1') selectedCamera = 0;
     if(key == '2') selectedCamera = 1;
+    if(key == '3') selectedCamera = 2;
+    if(key == '4') selectedCamera = 3;
+    if(key == '5') selectedCamera = 4;
     
     if(key == OF_KEY_DOWN) cameraB.setDistance(cameraB.getDistance()+2 * 10);
     if(key == OF_KEY_UP) cameraB.setDistance(cameraB.getDistance()-2 * 10);

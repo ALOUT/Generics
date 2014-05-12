@@ -12,6 +12,8 @@
 #include "ofMain.h"
 #include "GnMesh.h"
 
+#include "GnMotionPafume.h"
+
 // 透視投射影クラス
 class GnFrustumCulling{
     
@@ -24,7 +26,7 @@ public:
     void setup();
     void update();
     void draw();
-    void drawFrustum();
+    void drawFrustum(ofCamera _camera);
     
     float nearDis;
     float farDis;
@@ -33,9 +35,14 @@ public:
     int selectedCamera;
     ofCamera cameraA;
     ofEasyCam  cameraB;
+    ofCamera cameraC;
+    ofCamera cameraD;
+    ofCamera cameraE;
     vector <ofCamera*> cams;
     
     GnMesh mesh;
+    
+    GnMotionPafume pafume;
 
 };
 
