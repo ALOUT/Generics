@@ -12,6 +12,9 @@
 #include "ofxGifEncoder.h"
 #include "ofxVideoRecorder.h"
 
+
+
+
 class ofApp : public ofBaseApp{
     
 public:

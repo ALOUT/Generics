@@ -43,6 +43,11 @@ void ofApp::keyPressed(int key){
     gifEncorderKeyPress(key);
     videoRecorderKeyPressed(key);
     frustum.keyPressed(key);
+    
+    if (key == 'f') {
+        ofToggleFullscreen();
+    }
+    
 }
 
 //--------------------------------------------------------------
@@ -107,14 +112,14 @@ void ofApp::setupVideoRecorder(){
     grabbedImage.grabScreen(0,0,frameW,frameH);
 
     vidRecorder.setFfmpegLocation(ofFilePath::getAbsolutePath("/usr/local/bin/ffmpeg")); // use this is you have ffmpeg installed in your data folder
-    
+        
     fileName = "testMovie2";
-    fileExt = ".mov"; // ffmpeg uses the extension to determine the container type. run 'ffmpeg -formats' to see supported formats
+    fileExt = ".mp4"; // ffmpeg uses the extension to determine the container type. run 'ffmpeg -formats' to see supported formats
     
     // override the default codecs if you like
     // run 'ffmpeg -codecs' to find out what your implementation supports (or -formats on some older versions)
     vidRecorder.setVideoCodec("mpeg4");
-    vidRecorder.setVideoBitrate("800k");
+    vidRecorder.setVideoBitrate("25000k");
     vidRecorder.setAudioCodec("mp3");
     vidRecorder.setAudioBitrate("192k");
     
